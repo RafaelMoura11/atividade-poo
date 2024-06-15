@@ -12,7 +12,6 @@ export default class TV {
     public mudarCanal(canal: string): void {
         if (canal && this._TvLigada) {
             this._canal = canal;
-            return console.log(`Agora você está no canal ${ this._canal }`);
         }
     }
 
@@ -23,22 +22,20 @@ export default class TV {
     }
 
     public aumentarVolume(): void {
-        if (this._TvLigada) {
+        if (this._TvLigada && this._volume < 10) {
             this._volume += 1;
-            return console.log(`Volume: ${ this._volume }`);
         }
     }
 
     public diminuirVolume(): void {
-        if (this._TvLigada) {
+        if (this._TvLigada && this._volume > 0) {
             this._volume -= 1;
-            return console.log(`Volume: ${ this._volume }`);
         }
     }
 
     public volumeAtual(): void {
         if (this._TvLigada) {
-            return console.log(`Volume: ${ this._volume }`);
+            return console.log(`Volume: ${ this._volume }/10`);
         }
     }
 
