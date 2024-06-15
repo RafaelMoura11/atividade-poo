@@ -10,26 +10,36 @@ export default class TV {
     }
 
     public mudarCanal(canal: string): void {
-        this._canal = canal;
-        return console.log(`Agora você está no canal ${ this._canal }`);
+        if (canal && this._TvLigada) {
+            this._canal = canal;
+            return console.log(`Agora você está no canal ${ this._canal }`);
+        }
     }
 
     public canalAtual(): void {
-        return console.log(`Você está no canal ${ this._canal }`);
+        if (this._TvLigada) {
+            return console.log(`Você está no canal ${ this._canal }`);
+        }
     }
 
     public aumentarVolume(): void {
-        this._volume += 1;
-        return console.log(`Volume: ${ this._volume }`);
+        if (this._TvLigada) {
+            this._volume += 1;
+            return console.log(`Volume: ${ this._volume }`);
+        }
     }
 
     public diminuirVolume(): void {
-        this._volume -= 1;
-        return console.log(`Volume: ${ this._volume }`);
+        if (this._TvLigada) {
+            this._volume -= 1;
+            return console.log(`Volume: ${ this._volume }`);
+        }
     }
 
     public volumeAtual(): void {
-        return console.log(`Volume: ${ this._volume }`);
+        if (this._TvLigada) {
+            return console.log(`Volume: ${ this._volume }`);
+        }
     }
 
     public ligarOuDesligarTV(): void {
