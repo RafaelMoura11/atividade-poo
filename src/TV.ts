@@ -17,7 +17,7 @@ export default class TV {
 
     public canalAtual(): void {
         if (this._TvLigada) {
-            return console.log(`Você está no canal ${ this._canal }`);
+            return console.log(`\nVocê está no canal ${ this._canal }\n`);
         }
     }
 
@@ -35,13 +35,13 @@ export default class TV {
 
     public volumeAtual(): void {
         if (this._TvLigada) {
-            return console.log(`Volume: ${ this._volume }/10`);
+            return console.log(`\nVolume: ${ this._volume }/10\n`);
         }
     }
 
     public ligarOuDesligarTV(): void {
         this._TvLigada = !this._TvLigada;
-        const mensagem = this._TvLigada ? "Ligando a TV" : "Desligando a TV";
+        const mensagem = this._TvLigada ? "\nLigando a TV\n" : "\nDesligando a TV\n";
         return console.log(mensagem);
     }
 
@@ -51,9 +51,9 @@ export default class TV {
     }
 
     public statusTV(): void {
-        console.log(`Canal atual: ${ this._canal }`);
+        console.log(`\nCanal atual: ${ this._canal }`);
         console.log(`Volume atual: ${ this._volume }`);
-        console.log(`A TV está: ${ this.TVEstaLigada() }`);
+        console.log(`A TV está: ${ this.TVEstaLigada() }\n`);
     }
 
 }
